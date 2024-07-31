@@ -1,0 +1,18 @@
+.home-page-loading {
+  width: 1440px;
+  height: 1024px;
+  gap: 0px;
+  opacity: 0px;
+  background: #181818;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media(max-width:560px){
+  .home-page-loading {
+      width: 360px;
+      height: 640px;
+  }
+}

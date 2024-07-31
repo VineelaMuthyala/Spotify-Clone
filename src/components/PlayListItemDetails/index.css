@@ -1,0 +1,160 @@
+.body-container {
+  height: 866px;
+  width: 1342px;
+}
+.track-cover-container {
+  display: flex;
+  flex-direction: row;
+  padding-left: 32px;
+}
+.track-cover-container-small {
+  display: none;
+}
+.track-cover-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-left: 20px;
+}
+.track-cover-image {
+  width: 295px;
+  height: 295px;
+  border-radius: 8px;
+}
+.track-cover-text {
+  width: 95px;
+  height: 21px;
+  font-family: Assistant;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.93px;
+  text-align: left;
+}
+.track-cover-heading {
+  margin: 0px;
+  width: 621px;
+  height: 105px;
+  font-family: Assistant;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 104.64px;
+  text-align: left;
+}
+.track-table-titles-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 32px;
+}
+.table-tracks {
+  margin-left: 89px;
+}
+.table-album {
+  margin-left: 220px;
+}
+.table-time {
+  margin-left: 265px;
+}
+.table-artist {
+  margin-left: 175px;
+}
+.table-added {
+  margin-left: 220px;
+}
+.line {
+  width: 1278px;
+  height: 0px;
+  border: 1px solid #475569;
+}
+.tracks-items-container {
+  display: flex;
+  height: 450px;
+  width: 1342px;
+
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+@media (max-width: 560px) {
+  .body-container {
+    height: auto;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .track-cover-container {
+    display: none;
+  }
+  .track-cover-container-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .track-cover-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    padding: 0px;
+  }
+  .track-cover-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+  }
+  .track-cover-text {
+    width: 95px;
+    height: 21px;
+    font-family: Assistant;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20.93px;
+    text-align: left;
+    margin-top: 10px;
+  }
+  .track-cover-heading {
+    margin: 0px;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+  }
+  .track-table-titles-container {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    margin-top: 0px;
+
+    width: 300px;
+  }
+  .table-tracks {
+    margin-left: 0px;
+  }
+  .table-album {
+    display: none;
+  }
+  .table-time {
+    margin-left: 0px;
+  }
+  .table-artist {
+    display: none;
+  }
+  .table-added {
+    display: none;
+  }
+  .line {
+    width: 330px;
+  }
+  .tracks-items-container {
+    display: flex;
+    height: auto;
+    width: 300px;
+    overflow: hidden;
+    font-size: 12px;
+  }
+}
