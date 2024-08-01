@@ -32,8 +32,13 @@ class Footer extends Component {
             onClickMuteButton,
             volumeMuteStatus,
           } = value
-          const {previewUrl, artists, name, formatedMinutes, formatedSeconds} =
-            footerDetails
+          const {
+            previewUrl,
+            artists,
+            name,
+            formatedMinutes,
+            formatedSeconds,
+          } = footerDetails
 
           const onClickPlay = () => {
             onClickPlayButton()

@@ -38,7 +38,6 @@
   display: flex;
   width: 36px;
   height: 36px;
-  
 }
 
 .logout-text {
@@ -66,7 +65,7 @@
   .logout-icon-container {
     width: 70px;
   }
-  .logout-icon{
+  .logout-icon {
     display: none;
   }
 

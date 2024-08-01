@@ -10,9 +10,9 @@
   justify-content: center;
   align-items: center;
 }
-@media(max-width:560px){
+@media (max-width: 560px) {
   .home-page-loading {
-      width: 360px;
-      height: 640px;
+    width: 360px;
+    height: 640px;
   }
 }

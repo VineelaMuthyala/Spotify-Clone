@@ -142,7 +142,7 @@
     width: 300px;
     height: 400px;
   }
-  .newreleases-text-container{
+  .newreleases-text-container {
     height: 25px;
   }
   .newreleases-text {
@@ -165,7 +165,7 @@
     font-size: 20px;
   }
   .like-1-container {
-  align-self: center;
-  width: 280px;
-}
+    align-self: center;
+    width: 280px;
+  }
 }

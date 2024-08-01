@@ -87,6 +87,7 @@ class HomeRoute extends Component {
         this.getUpdatedPlayLists(eachItem),
       )
       console.log('update Playlist', updatedPlayLists)
+
       const categoriesListResponse = await fetch(categoriesListUrl, options)
       const categoriesListData = await categoriesListResponse.json()
       const categoriesList = categoriesListData.categories.items
@@ -116,9 +117,9 @@ class HomeRoute extends Component {
 
   renderPlayList = () => {
     const {featuredPlayList} = this.state
-    console.log('length', featuredPlayList.length)
+
     return (
-      <ul className='lists-container'>
+      <ul className="lists-container">
         {featuredPlayList.map(eachItem => (
           <PlayList key={eachItem.id} playListItem={eachItem} />
         ))}
@@ -129,7 +130,7 @@ class HomeRoute extends Component {
   renderCategories = () => {
     const {categories} = this.state
     return (
-      <ul className='lists-container'>
+      <ul className="lists-container">
         {categories.map(eachItem => (
           <Categories key={eachItem.id} categories={eachItem} />
         ))}
@@ -140,7 +141,7 @@ class HomeRoute extends Component {
   renderNewReleases = () => {
     const {newReleases} = this.state
     return (
-      <ul className='lists-container'>
+      <ul className="lists-container">
         {newReleases.map(eachItem => (
           <NewReleases key={eachItem.id} newReleases={eachItem} />
         ))}
@@ -150,14 +151,14 @@ class HomeRoute extends Component {
 
   renderHomePageSuccess = () => (
     <>
-      <div className='home-page-container'>
+      <div className="home-page-container">
         <SideBar />
-        <div className='home-body-container'>
-          <p className='home-playlist-heading'>Popular Playlists</p>
+        <div className="home-body-container">
+          <p className="home-playlist-heading">Editors Picks</p>
           {this.renderPlayList()}
-          <p className='home-playlist-heading'>Categories</p>
+          <p className="home-playlist-heading">Genres & Moods</p>
           {this.renderCategories()}
-          <p className='home-playlist-heading'>New Releases</p>
+          <p className="home-playlist-heading">New Releases</p>
           {this.renderNewReleases()}
         </div>
       </div>
@@ -165,19 +166,19 @@ class HomeRoute extends Component {
   )
 
   renderHomePageFailure = () => (
-    <div className='home-page-container'>
+    <div className="home-page-container">
       <SideBar />
-      <div className='home-body-container'>
-        <p className='home-playlist-heading'>Popular Playlists</p>
-        <div className='home-playList-failure'>
+      <div className="home-body-container">
+        <p className="home-playlist-heading">Popular Playlists</p>
+        <div className="home-playList-failure">
           <FailurePage />
         </div>
-        <p className='home-playlist-heading'>Categories</p>
-        <div className='home-playList-failure'>
+        <p className="home-playlist-heading">Categories</p>
+        <div className="home-playList-failure">
           <FailurePage />
         </div>
-        <p className='home-playlist-heading'>New Releases</p>
-        <div className='home-playList-failure'>
+        <p className="home-playlist-heading">New Releases</p>
+        <div className="home-playList-failure">
           <FailurePage />
         </div>
       </div>
