@@ -13,7 +13,7 @@ class PlayListItemDetails extends Component {
       <SpotifyContext.Consumer>
         {value => {
           const {selectedTrackId} = value
-          console.log('selectedId', selectedTrackId, tracksList[0].track.id)
+
           return (
             <div className="body-container">
               <div className="track-cover-container">
