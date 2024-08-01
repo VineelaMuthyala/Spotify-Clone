@@ -20,7 +20,6 @@
   left: 492px;
   gap: 12px;
   border-radius: 12px;
- 
 }
 .logo-heading-container {
   display: flex;
@@ -47,7 +46,7 @@
   width: 196px;
   height: 43.27px;
   gap: 0px;
- 
+
   font-family: Assistant;
   font-size: 32px;
   font-weight: 700;
@@ -135,7 +134,7 @@
   height: 48px;
   gap: 16px;
   border-radius: 4px;
-  
+
   @media (max-width: 768px) {
     padding: 12px 24px 12px 24px;
     width: 93px;
@@ -155,7 +154,7 @@
   padding: 12px 32px 12px 32px;
   gap: 8px;
   border-radius: 8px;
- 
+
   background: #1db954;
   font-family: Assistant;
   font-size: 16px;

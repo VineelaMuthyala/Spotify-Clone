@@ -39,8 +39,12 @@ class App extends Component {
   }
 
   render() {
-    const {footerDetails, playBtnStatus, volumeMuteStatus, selectedTrackId} =
-      this.state
+    const {
+      footerDetails,
+      playBtnStatus,
+      volumeMuteStatus,
+      selectedTrackId,
+    } = this.state
     console.log('app-footer', footerDetails)
 
     return (
