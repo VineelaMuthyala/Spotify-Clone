@@ -76,7 +76,7 @@
   left: 1304px;
   gap: 0px;
   border-radius: 4px;
- 
+
   background: #1db954;
 }
 .progress-bar {
@@ -85,7 +85,6 @@
   top: 960px;
   left: 497px;
   gap: 0px;
- 
 }
 .track-duration {
   width: 57px;
@@ -160,7 +159,7 @@
     left: 1304px;
     gap: 0px;
     border-radius: 4px;
-    
+
     background: #1db954;
   }
   .progress-bar {
@@ -169,7 +168,6 @@
     top: 960px;
     left: 497px;
     gap: 0px;
-    
   }
   .track-duration {
     width: 57px;
