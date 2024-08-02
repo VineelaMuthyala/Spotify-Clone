@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, createRef} from 'react'
 
 import {
   FaVolumeUp,
@@ -8,12 +8,53 @@ import {
 } from 'react-icons/fa'
 
 import SpotifyContext from '../../context/SpotifyContext'
-import AudioPlayer from '../AudioPlayer'
 
 import './index.css'
 
 class Footer extends Component {
+  constructor(props) {
+    super(props)
+    this.audioElement = createRef() // Create a ref for the audio element
+    this.state = {
+      isPlaying: false,
+      volume: 1, // Volume range: 0 to 1
+      currentTime: 0, // Track current playback time
+    }
+  }
+
+  componentDidMount() {
+    const audio = this.audioElement.current
+    if (audio) {
+      audio.addEventListener('loadedmetadata', this.handleMetadataLoad)
+      audio.addEventListener('timeupdate', this.handleTimeUpdate)
+    }
+  }
+
+  componentWillUnmount() {
+    const audio = this.audioElement.current
+    if (audio) {
+      audio.removeEventListener('loadedmetadata', this.handleMetadataLoad)
+      audio.removeEventListener('timeupdate', this.handleTimeUpdate)
+    }
+  }
+
+  handleMetadataLoad = () => {
+    const audio = this.audioElement.current
+    if (audio) {
+      this.setState({duration: audio.duration})
+    }
+  }
+
+  handleTimeUpdate = () => {
+    const audio = this.audioElement.current
+    if (audio) {
+      this.setState({currentTime: audio.currentTime})
+    }
+  }
+
   render() {
+    const {isPlaying, volume, duration, currentTime} = this.state
+
     return (
       <SpotifyContext.Consumer>
         {value => {
@@ -25,13 +66,7 @@ class Footer extends Component {
             tracksList,
           } = this.props
           const {images} = coverDetails
-          const {
-            footerDetails,
-            playBtnStatus,
-            onClickPlayButton,
-            onClickMuteButton,
-            volumeMuteStatus,
-          } = value
+          const {footerDetails} = value
           const {
             previewUrl,
             artists,
@@ -40,12 +75,41 @@ class Footer extends Component {
             formatedSeconds,
           } = footerDetails
 
-          const onClickPlay = () => {
-            onClickPlayButton()
+          const handlePlayPause = () => {
+            const audio = this.audioElement.current
+
+            if (audio) {
+              if (isPlaying) {
+                audio.pause()
+              } else {
+                audio.play()
+              }
+              this.setState(prevState => ({isPlaying: !prevState.isPlaying}))
+            }
           }
 
-          const onClickMute = () => {
-            onClickMuteButton()
+          const handleVolumeChange = e => {
+            const volumeChanged = e.target.value
+            console.log(volumeChanged)
+            const audio = this.audioElement.current
+            if (audio) {
+              audio.volume = volumeChanged
+            }
+            this.setState({volume: volumeChanged})
+          }
+
+          const formatTime = time => {
+            const minutes = Math.floor(time / 60)
+            const seconds = Math.floor(time % 60)
+            return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
+          }
+
+          const handleSliderChange = event => {
+            const time = event.target.value
+            const audio = this.audioElement.current
+            if (audio) {
+              audio.currentTime = (time / 100) * audio.duration
+            }
           }
 
           return (
@@ -65,7 +129,7 @@ class Footer extends Component {
                       </div>
                     </div>
                     <audio
-                      controls
+                      ref={this.audioElement}
                       src={trackOneUrl}
                       type="audio/mp3"
                       className="audio-style"
@@ -88,7 +152,7 @@ class Footer extends Component {
                       </div>
                     </div>
                     <audio
-                      controls
+                      ref={this.audioElement}
                       src={previewUrl}
                       type="audio/mp3"
                       className="audio-style"
@@ -98,6 +162,40 @@ class Footer extends Component {
                     </audio>
                   </>
                 )}
+                <div className="play-pause-container">
+                  <button onClick={handlePlayPause} className="play-button">
+                    {isPlaying ? (
+                      <FaPauseCircle className="play-pause" />
+                    ) : (
+                      <FaPlayCircle className="play-pause" />
+                    )}
+                  </button>
+                  <span className="playback-time">
+                    {formatTime(currentTime)} / {formatTime(duration)}
+                  </span>
+                  <input
+                    type="range"
+                    id="progress-slider"
+                    className="progress-slider"
+                    min="0"
+                    max="100"
+                    step="0.1"
+                    value={(currentTime / duration) * 100}
+                    onChange={handleSliderChange}
+                  />
+                </div>
+                <div className="volume-container">
+                  {volume === 0 ? <FaVolumeMute /> : <FaVolumeUp />}
+                  <input
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value={volume}
+                    onChange={handleVolumeChange}
+                    className="volume-slider"
+                  />
+                </div>
               </div>
             </div>
           )

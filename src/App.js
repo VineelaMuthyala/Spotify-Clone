@@ -15,8 +15,6 @@ import './App.css'
 class App extends Component {
   state = {
     footerDetails: '',
-    playBtnStatus: true,
-    volumeMuteStatus: true,
     selectedTrackId: '',
   }
 
@@ -28,23 +26,8 @@ class App extends Component {
     this.setState({footerDetails: items})
   }
 
-  onClickPlayButton = () => {
-    this.setState(prevState => ({playBtnStatus: !prevState.playBtnStatus}))
-  }
-
-  onClickMuteButton = () => {
-    this.setState(prevState => ({
-      volumeMuteStatus: !prevState.volumeMuteStatus,
-    }))
-  }
-
   render() {
-    const {
-      footerDetails,
-      playBtnStatus,
-      volumeMuteStatus,
-      selectedTrackId,
-    } = this.state
+    const {footerDetails, selectedTrackId} = this.state
     console.log('app-footer', footerDetails)
 
     return (
@@ -56,8 +39,6 @@ class App extends Component {
           onClickTrack: this.onClickTrack,
           selectedTrackId,
           footerDetails,
-          playBtnStatus,
-          volumeMuteStatus,
         }}
       >
         <BrowserRouter>

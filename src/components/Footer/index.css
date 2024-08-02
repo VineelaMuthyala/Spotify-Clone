@@ -24,17 +24,17 @@
 .footer-item-text-container {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 101px;
   height: 60px;
   margin-left: 20px;
 }
 
 .footer-item-heading {
   margin-top: 0px;
-  width: 300px;
+  width: 200px;
   height: 21px;
   font-family: Assistant;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20.93px;
   text-align: left;
@@ -102,8 +102,67 @@
   flex-direction: row;
 }
 .audio-style {
-  width: 700px;
+  width: 100%; /* Full width */
+  margin: 10px 0; /* Add margin for spacing */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #333; /* Dark background for audio controls */
 }
+.audio-style::-webkit-media-controls-panel {
+  background-color: #333;
+}
+.volume-slider {
+  -webkit-appearance: none;
+  width: 88px;
+  height: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  background: #1db954;
+}
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default thumb styling */
+  appearance: none;
+  width: 15px; /* Width of the thumb */
+  height: 15px; /* Height of the thumb */
+  background: white; /* Thumb color */
+  border-radius: 50%; /* Make thumb round */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+.play-pause-container {
+  display: flex;
+  flex-direction: row;
+}
+.play-button {
+  background-color: transparent;
+  border: 0px;
+  color: white;
+  margin-right: 10px;
+}
+.play-pause {
+  width: 25px;
+  height: 25px;
+}
+.playback-time {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.progress-slider {
+  width: 600px;
+  height: 5px;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  background: #4caf50;
+  margin-top: 25px;
+}
+.progress-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default thumb styling */
+  appearance: none;
+  width: 15px; /* Width of the thumb */
+  height: 15px; /* Height of the thumb */
+  background: white;
+  border-radius: 50%; /* Make thumb round */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
 @media (max-width: 560px) {
   .footer-page {
     width: 360px;
@@ -188,5 +247,14 @@
   }
   .audio-style {
     width: 100px;
+  }
+  .playback-time {
+    display: none;
+  }
+  .progress-slider {
+    display: none;
+  }
+  .volume-container{
+    display: none;
   }
 }
