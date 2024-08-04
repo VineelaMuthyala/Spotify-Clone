@@ -1,7 +1,6 @@
 .home-page-loading {
-  width: 1440px;
-  height: 1024px;
-  gap: 0px;
+  width: 100vw;
+  height: 100vh;
 
   background: #181818;
   color: #ffffff;
@@ -13,6 +12,6 @@
 @media (max-width: 560px) {
   .home-page-loading {
     width: 360px;
-    height: 640px;
+    height: 100vh;
   }
 }

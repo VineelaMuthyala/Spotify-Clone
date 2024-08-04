@@ -201,7 +201,7 @@ class HomeRoute extends Component {
   }
 
   render() {
-    return <>{this.renderHomePage()}</>
+    return <div className="home-container">{this.renderHomePage()}</div>
   }
 }
 

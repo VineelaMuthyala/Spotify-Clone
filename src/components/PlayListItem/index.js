@@ -119,7 +119,7 @@ class PlayListItem extends Component {
         </div>
 
         <div className="playlist-item-page-small">
-          <div className="playlist-item-container">
+          <div className="playlist-item-container-small">
             <Header />
             <PlayListItemDetails
               tracksList={tracksList}

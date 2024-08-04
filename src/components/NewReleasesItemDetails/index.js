@@ -14,15 +14,12 @@ class NewReleasesItemDetails extends Component {
   render() {
     const {newReleasesDetails} = this.props
     const {
-      href,
-      id,
       images,
       label,
       name,
       popularity,
       releaseDate,
       totalTracks,
-      uri,
     } = newReleasesDetails
     const releasingOn = dateFormat(releaseDate, 'dddd, mmmm dS, yyyy')
 
@@ -34,7 +31,7 @@ class NewReleasesItemDetails extends Component {
           <div className="new-item-container">
             <Header />
             <div className="newreleases-item-container">
-              <div>
+              <div className="n-image-container">
                 <img
                   src={images}
                   alt="new releases"
@@ -50,13 +47,12 @@ class NewReleasesItemDetails extends Component {
                 <div className="like-1-container">
                   <div className="like-2-container">
                     <AiFillLike className="like-icon" />
-                    <p className="like-text-1">I'm interested</p>
+                    <p className="like-text-1">I am interested</p>
                   </div>
                   <p className="like-text-2">
                     Mark Intrested to know when booking opens
                   </p>
                 </div>
-
                 <div className="music-container">
                   <IoMusicalNotes className="musical-note" />
                   <p className="musical-note-text">Music : {label}</p>
@@ -98,7 +94,7 @@ class NewReleasesItemDetails extends Component {
                 <div className="like-1-container">
                   <div className="like-2-container">
                     <AiFillLike className="like-icon" />
-                    <p className="like-text-1">I'm interested</p>
+                    <p className="like-text-1">I am interested</p>
                   </div>
                   <p className="like-text-2">
                     Mark Intrested to know when booking opens

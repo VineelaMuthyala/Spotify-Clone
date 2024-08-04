@@ -1,4 +1,4 @@
-import React, {Component, createRef} from 'react'
+import {Component, createRef} from 'react'
 
 import {
   FaVolumeUp,
@@ -63,17 +63,10 @@ class Footer extends Component {
             trackOneArtist,
             trackOneUrl,
             coverDetails,
-            tracksList,
           } = this.props
           const {images} = coverDetails
           const {footerDetails} = value
-          const {
-            previewUrl,
-            artists,
-            name,
-            formatedMinutes,
-            formatedSeconds,
-          } = footerDetails
+          const {previewUrl, artists, name} = footerDetails
 
           const handlePlayPause = () => {
             const audio = this.audioElement.current
@@ -163,7 +156,11 @@ class Footer extends Component {
                   </>
                 )}
                 <div className="play-pause-container">
-                  <button onClick={handlePlayPause} className="play-button">
+                  <button
+                    onClick={handlePlayPause}
+                    className="play-button"
+                    type="button"
+                  >
                     {isPlaying ? (
                       <FaPauseCircle className="play-pause" />
                     ) : (

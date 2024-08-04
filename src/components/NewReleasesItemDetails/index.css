@@ -1,10 +1,11 @@
 .new-item-page {
   display: flex;
   flex-direction: row;
-  width: 1342px;
-  height: 1024px;
+  width: 100vw;
+  height: 100vh;
   background: #181818;
   color: white;
+  overflow: hidden;
 }
 .new-item-container {
   display: flex;
@@ -15,8 +16,8 @@
 }
 
 .newreleases-item-container {
-  width: 1278px;
-  height: 912px;
+  width: 90vw;
+  height: 85vh;
   border-radius: 8px;
   background: #040306;
   display: flex;
@@ -114,25 +115,30 @@
 @media (max-width: 560px) {
   .new-item-page-small {
     display: flex;
+    flex-direction: column;
     width: 360px;
+    height: 100vh;
     background: #181818;
     color: white;
+    overflow: hidden;
   }
+
   .new-item-page {
     display: none;
   }
   .new-item-container {
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 360px;
+    height: 100vh;
+    overflow: auto;
   }
 
   .newreleases-item-container {
     width: 300px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 
     margin: 0px;
     padding: 0px;
@@ -140,7 +146,7 @@
 
   .newreleases-image {
     width: 300px;
-    height: 400px;
+    height: 300px;
   }
   .newreleases-text-container {
     height: 25px;
@@ -155,6 +161,8 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 0px;
+    height: 100vh;
+    overflow: auto;
   }
   .music-container {
     width: 280px;

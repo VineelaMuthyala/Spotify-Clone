@@ -18,7 +18,7 @@
   display: flex;
 }
 .item-name-box {
-  width: 250px;
+  width: 25vw;
 }
 .item-name {
   width: 108px;
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: flex-start;
 
-  width: 320px;
+  width: 18vw;
 }
 .item-album {
   width: 17px;
@@ -45,7 +45,7 @@
   text-align: left;
 }
 .item-duration-box {
-  width: 220px;
+  width: 18vw;
 }
 .item-duration {
   height: 24px;
@@ -56,7 +56,7 @@
   text-align: left;
 }
 .item-artists-box {
-  width: 250px;
+  width: 18vw;
 }
 .item-artists {
   height: 24px;
@@ -67,7 +67,7 @@
   text-align: left;
 }
 .item-added-at-box {
-  width: 180px;
+ width: 18vw;
 }
 .item-added-at {
   width: 91px;

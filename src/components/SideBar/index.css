@@ -1,6 +1,6 @@
 .sidebar-container {
   width: 98px;
-  height: 1024px;
+  height: 100vh;
   gap: 0px;
 
   background: #040306;
@@ -8,8 +8,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .sidebar-logo {
   display: flex;

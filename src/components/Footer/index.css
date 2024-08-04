@@ -1,5 +1,5 @@
 .footer-page {
-  width: 1342px;
+  width: 100vw;
   height: 108px;
 
   border-top: 0.5px solid #9b9b9b;
@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 1340px;
+  width: 90vw;
   margin: 0px;
 }
 .footer-image {
@@ -27,6 +27,7 @@
   width: 101px;
   height: 60px;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .footer-item-heading {
@@ -41,7 +42,8 @@
 }
 .footer-item-text {
   margin-top: 0px;
-  width: 101px;
+
+  width: 200px;
   height: 16px;
   font-family: Assistant;
   font-size: 12px;
@@ -80,7 +82,7 @@
   background: #1db954;
 }
 .progress-bar {
-  width: 664px;
+  width: 700px;
   height: 20px;
   top: 960px;
   left: 497px;
@@ -144,6 +146,8 @@
 .playback-time {
   margin-top: 20px;
   margin-right: 20px;
+  font-size: 12px;
+  color: #9b9b9b;
 }
 .progress-slider {
   width: 600px;
@@ -254,7 +258,7 @@
   .progress-slider {
     display: none;
   }
-  .volume-container{
+  .volume-container {
     display: none;
   }
 }

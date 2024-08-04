@@ -1,21 +1,22 @@
 .p-playlist-item-page {
   display: flex;
   flex-direction: row;
-  width: 1342px;
-  height: 1024px;
+  width: 100vw;
+  height: 100vh;
   background: #181818;
   color: white;
+  overflow: hidden;
 }
 .playlist-item-container {
   display: flex;
   flex-direction: column;
-  width: 1342px;
-  height: 1024px;
+  width: 100vw;
+  height: 100vh;
   background: #181818;
 }
 .playlist-item-failure-container {
-  width: 1278px;
-  height: 912px;
+  width: 100vw;
+  height: 100vh;
   border-radius: 8px;
   background: #040306;
   display: flex;
@@ -35,14 +36,15 @@
     display: flex;
     flex-direction: column;
     width: 360px;
-
+    height: 100vh;
+    overflow: hidden;
     background: #181818;
     color: white;
   }
 
-  .playlist-item-container {
+  .playlist-item-container-small {
     width: 360px;
-    height: auto;
+    height: 100vh;
   }
   .playlist-item-failure-container {
     width: 300px;

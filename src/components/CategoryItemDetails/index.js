@@ -4,15 +4,8 @@ import './index.css'
 class CategoryItemDetails extends Component {
   render() {
     const {categoryItemList} = this.props
-    const {
-      description,
-      href,
-      name,
-      snapshotId,
-      tracks,
-      images,
-    } = categoryItemList
-    const {type, uri} = tracks
+    const {name, images} = categoryItemList
+
     const {url} = images
     return (
       <div className="category-item-details">

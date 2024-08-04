@@ -1,17 +1,19 @@
 .category-item-page {
   display: flex;
   flex-direction: row;
-  width: 1342px;
-  height: 1024px;
+  width: 100vw;
+  height: 100vh;
   background: #181818;
   color: white;
+  overflow: hidden;
 }
 .category-item-container {
   display: flex;
   flex-direction: column;
-  width: 1342px;
-  height: 1024px;
+  width: 100vw;
+  height: 100vh;
   background: #181818;
+  overflow: auto;
 }
 .category-list-item-details {
   display: flex;
@@ -42,13 +44,17 @@
     display: flex;
     flex-direction: column;
     width: 360px;
-    height: auto;
+    height: 100vh;
+    overflow: hidden;
     background: #181818;
     color: white;
   }
   .category-list-item-details {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+    flex-wrap: nowrap;
   }
   .category-heading {
     font-family: Assistant;

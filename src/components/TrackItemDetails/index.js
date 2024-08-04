@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import dateFormat from 'dateformat'
+
 import {formatDistance, differenceInYears} from 'date-fns'
 
 import SpotifyContext from '../../context/SpotifyContext'
