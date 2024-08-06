@@ -86,7 +86,7 @@ class CategoryItem extends Component {
               {categoryItemList.map(eachItem => (
                 <CategoryItemDetails
                   categoryItemList={eachItem}
-                  key={eachItem.snapshotId}
+                  key={eachItem.name}
                 />
               ))}
             </div>

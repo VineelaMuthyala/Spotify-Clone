@@ -41,6 +41,7 @@ class HomeRoute extends Component {
     name: data.name,
     tracks: {
       herf: data.tracks.herf,
+      total: data.tracks.total,
     },
     type: data.type,
   })
@@ -154,11 +155,11 @@ class HomeRoute extends Component {
       <div className="home-page-container">
         <SideBar />
         <div className="home-body-container">
-          <p className="home-playlist-heading">Editors Picks</p>
+          <h1 className="home-playlist-heading">Editors Picks</h1>
           {this.renderPlayList()}
-          <p className="home-playlist-heading">Genres & Moods</p>
+          <h1 className="home-playlist-heading">Genres & Moods</h1>
           {this.renderCategories()}
-          <p className="home-playlist-heading">New Releases</p>
+          <h1 className="home-playlist-heading">New Releases</h1>
           {this.renderNewReleases()}
         </div>
       </div>
@@ -185,12 +186,35 @@ class HomeRoute extends Component {
     </div>
   )
 
+  renderHomePageLoading = () => (
+    <div className="Loading-page-container">
+      <div className="loading-page-body">
+        <p className="Loading-page-heading">Popular Playlists</p>
+        <div className="Loading-page" data-testid="loader">
+          <LoadingPage />
+        </div>
+        <p className="Loading-page-heading" data-testid="loader">
+          Categories
+        </p>
+        <div className="Loading-page">
+          <LoadingPage />
+        </div>
+        <p className="Loading-page-heading" data-testid="loader">
+          New Releases
+        </p>
+        <div className="Loading-page">
+          <LoadingPage />
+        </div>
+      </div>
+    </div>
+  )
+
   renderHomePage = () => {
     const {apiStatus} = this.state
     console.log(apiStatus)
     switch (apiStatus) {
       case apiStatusConstants.inProgress:
-        return <LoadingPage />
+        return this.renderHomePageLoading()
       case apiStatusConstants.success:
         return this.renderHomePageSuccess()
       case apiStatusConstants.failure:

@@ -1,7 +1,5 @@
 import {Component} from 'react'
 
-import {formatDistance, differenceInYears} from 'date-fns'
-
 import SpotifyContext from '../../context/SpotifyContext'
 
 import './index.css'
@@ -17,13 +15,37 @@ class TrackItemDetails extends Component {
     const addedDate = new Date(addedAt)
     const presentDate = new Date()
     let result
-    const diffYear = differenceInYears(presentDate, addedDate)
-    const diffMonths = formatDistance(presentDate, addedDate)
+    /*  const diffYear = differenceInYears(presentDate, addedDate) */
+    /* const diffMonths = formatDistance(presentDate, addedDate) */
 
-    if (diffYear <= 0) {
-      result = `${diffMonths} ago`
+    // Calculate the difference in years
+    const differenceInYears =
+      presentDate.getFullYear() - addedDate.getFullYear()
+
+    // Adjust for whether the addedDate's month/day has passed in the current year
+    const hasPassedThisYear =
+      presentDate.getMonth() < addedDate.getMonth() ||
+      (presentDate.getMonth() === addedDate.getMonth() &&
+        presentDate.getDate() < addedDate.getDate())
+
+    const adjustedDifferenceInYears = hasPassedThisYear
+      ? differenceInYears - 1
+      : differenceInYears
+
+    let differenceInMonths =
+      (presentDate.getFullYear() - addedDate.getFullYear()) * 12
+    differenceInMonths += presentDate.getMonth() - addedDate.getMonth()
+
+    // Adjust for whether the addedDate's day has passed in the current month
+    const hasPassedThisMonth = presentDate.getDate() < addedDate.getDate()
+    const adjustedDifferenceInMonths = hasPassedThisMonth
+      ? differenceInMonths - 1
+      : differenceInMonths
+
+    if (adjustedDifferenceInMonths >= 12) {
+      result = `${adjustedDifferenceInYears} Years ago`
     } else {
-      result = `${diffYear} years ago`
+      result = `${adjustedDifferenceInMonths} Months ago`
     }
 
     const millisecondsToMinutes = milliseconds => {

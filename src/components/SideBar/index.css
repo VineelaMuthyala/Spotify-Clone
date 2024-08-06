@@ -26,14 +26,16 @@
   align-items: center;
   width: 37px;
   height: 56px;
-  top: 938px;
-  left: 30px;
-  gap: 4px;
+  
 
   color: #9b9b9b;
   cursor: pointer;
 }
-
+.logout-btn{
+background-color: transparent;
+  border: 0px;
+  color: #9b9b9b;
+}
 .logout-icon {
   display: flex;
   width: 36px;

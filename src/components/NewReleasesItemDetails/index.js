@@ -1,5 +1,4 @@
 import {Component} from 'react'
-import dateFormat from 'dateformat'
 
 import {AiFillLike} from 'react-icons/ai'
 import {IoMusicalNotes, IoAlbumsOutline} from 'react-icons/io5'
@@ -21,7 +20,16 @@ class NewReleasesItemDetails extends Component {
       releaseDate,
       totalTracks,
     } = newReleasesDetails
-    const releasingOn = dateFormat(releaseDate, 'dddd, mmmm dS, yyyy')
+
+    const date = new Date(releaseDate)
+    console.log(date, 'date')
+    const formattedDate = date.toLocaleDateString('en-US', {
+      weekday: 'long', // "Monday"
+      year: 'numeric', // "2024"
+      month: 'long', // "August"
+      day: 'numeric', // "4"
+    })
+    const releasingOn = formattedDate
 
     return (
       <>

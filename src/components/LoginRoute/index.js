@@ -58,7 +58,7 @@ class LoginRoute extends Component {
           <div className="logo-heading-container">
             <img
               className="spotify-logo"
-              alt="spotify"
+              alt="login website logo"
               src="https://res.cloudinary.com/dtf1kbume/image/upload/v1718704657/musicspotifyLogo_h3lzpo.png"
             />
             <h1 className="spotify-heading">Spotify Remix</h1>
@@ -84,7 +84,7 @@ class LoginRoute extends Component {
                 </label>
                 <input
                   className="input-text"
-                  type="text"
+                  type="password"
                   id="password"
                   value={password}
                   onChange={this.onChangePassword}

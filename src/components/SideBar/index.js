@@ -21,7 +21,9 @@ const SideBar = props => {
       <div className="logout-icon-container">
         <IoMdLogOut className="logout-icon" onClick={onClickLogout} />
         <GiHamburgerMenu className="burger" onClick={onClickLogout} />
-        <p className="logout-text">Logout</p>
+        <button className="logout-btn" type="button">
+          <p className="logout-text">Logout</p>
+        </button>
       </div>
     </div>
   )

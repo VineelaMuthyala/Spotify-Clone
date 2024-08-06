@@ -1,22 +1,14 @@
 .not-found-page {
-  width: 1440px;
-  height: 1024px;
-  top: 1982px;
-  left: -6576px;
-  gap: 0px;
-
+  width: 100vw;
+  height: 100vh;
   background: #141414;
   display: flex;
   flex-direction: row;
   color: white;
 }
 .not-found-container {
-  width: 1440px;
-  height: 1024px;
-  top: 1982px;
-  left: 2964px;
-  gap: 0px;
-
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -25,10 +17,8 @@
   align-self: center;
   width: 841.96px;
   height: 571.92px;
-  margin-top: 226px;
-
+  margin-top: 126px;
   gap: 24px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,10 +43,17 @@
   gap: 0px;
 
   font-family: Assistant;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 52.32px;
   text-align: center;
   color: #ffffff;
   margin: 0px;
+}
+.not-found-home-page-btn {
+  background-color: transparent;
+  color: white;
+  border: 0px;
+  font-size: 15px;
+  cursor: pointer;
 }

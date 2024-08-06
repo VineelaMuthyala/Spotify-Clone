@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: row;
   color: white;
+  background-color: transparent;
+  border: 0px;
 }
 .link-style {
   text-decoration: none;

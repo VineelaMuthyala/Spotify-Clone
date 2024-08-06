@@ -47,6 +47,7 @@
   border: 0px;
   border-radius: 4px;
   opacity: 0px;
+  cursor: pointer;
 }
 @media (max-width: 560px) {
   .failure-container {

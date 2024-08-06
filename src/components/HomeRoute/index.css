@@ -11,6 +11,26 @@
   background: #181818;
   color: #ffffff;
 }
+.Loading-page-container {
+  background: #181818;
+  color: #ffffff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.loading-page-body {
+  overflow: auto;
+  width: 100vw;
+}
+.Loading-page {
+  width: 100vw;
+}
+.Loading-page-heading{
+  margin: 20px;
+  font-size: 20px;
+}
 .home-body-container {
   display: flex;
   flex-direction: column;
