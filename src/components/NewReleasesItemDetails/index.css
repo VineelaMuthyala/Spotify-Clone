@@ -63,7 +63,6 @@
 .like-2-container {
   display: flex;
   flex-direction: row;
-
 }
 .like-text-1 {
   margin-top: 5px;
@@ -163,7 +162,7 @@
   .like-2-container {
     height: 25px;
   }
-  .n-name{
+  .n-name {
     font-size: 20px;
   }
 }
