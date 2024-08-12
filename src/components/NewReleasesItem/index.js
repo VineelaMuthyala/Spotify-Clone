@@ -65,13 +65,10 @@ class NewReleasesItem extends Component {
 
   renderNewReleasesItemFailure = () => (
     <>
-      <div className="playlist-item-page">
-        <SideBar />
-        <div className="playlist-item-container">
-          <Header />
-          <div className="playlist-item-failure-container">
-            <FailurePage />
-          </div>
+      <div className="new-item-failure-page">
+        <Header />
+        <div className="new-item-failure-container">
+          <FailurePage />
         </div>
       </div>
     </>

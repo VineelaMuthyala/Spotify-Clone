@@ -78,7 +78,9 @@ class CategoryItem extends Component {
     return (
       <>
         <div className="category-item-page">
-          <SideBar />
+          <div className="sidebar">
+            <SideBar />
+          </div>
           <div className="category-item-container">
             <Header />
             <h1 className="category-heading">Category</h1>
@@ -92,30 +94,15 @@ class CategoryItem extends Component {
             </div>
           </div>
         </div>
-        <div className="category-item-page-small">
-          <div className="category-item-container">
-            <Header />
-            <h1 className="category-heading">Category</h1>
-            <div className="category-list-item-details">
-              {categoryItemList.map(eachItem => (
-                <CategoryItemDetails
-                  categoryItemList={eachItem}
-                  key={eachItem.snapshotId}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
       </>
     )
   }
 
   renderCategotyItemFailure = () => (
-    <div className="playlist-item-page">
-      <SideBar />
-      <div className="playlist-item-container">
+    <div className="category-failure-page">
+      <div className="category-failure-container">
         <Header />
-        <div className="playlist-item-failure-container">
+        <div className="category-item-failure-container">
           <FailurePage />
         </div>
       </div>

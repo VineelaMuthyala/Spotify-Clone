@@ -9,7 +9,7 @@ class Categories extends Component {
     const {icons, id, name} = categories
     const {url} = icons
     return (
-      <Link to={`/category-playlists/${id}`} className="link-style">
+      <Link to={`/category/${id}/playlists`} className="link-style">
         <li className="c-list-item-container">
           <img src={url} alt="category" className="c-list-image" />
           <p className="c-list-item-name">{name}</p>

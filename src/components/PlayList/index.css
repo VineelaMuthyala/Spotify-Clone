@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
 
-  margin-right: 40px;
+  margin-right: 30px;
   margin-bottom: 30px;
 }
 
@@ -39,7 +39,8 @@
 @media (max-width: 560px) {
   .p-list-item-container {
     width: 82px;
-    height: auto;
+
+    margin-right: 30px;
   }
   .p-list-image {
     width: 82px;

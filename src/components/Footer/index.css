@@ -166,7 +166,12 @@
   border-radius: 50%; /* Make thumb round */
   cursor: pointer; /* Pointer cursor on hover */
 }
-
+.popup-content {
+  color: red;
+  font-family: Assistant;
+  font-size: 15px;
+  width: 200px;
+}
 @media (max-width: 560px) {
   .footer-page {
     width: 360px;

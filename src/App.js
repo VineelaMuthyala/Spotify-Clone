@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Switch, Route, Redirect, BrowserRouter} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import SpotifyContext from './context/SpotifyContext'
 
 import ProtectedRoute from './components/ProtectedRoute'
@@ -41,29 +41,19 @@ class App extends Component {
           footerDetails,
         }}
       >
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/login" component={LoginRoute} />
-            <ProtectedRoute exact path="/" component={HomeRoute} />
-            <ProtectedRoute
-              exact
-              path="/playlists-details/:id"
-              component={PlayListItem}
-            />
-            <ProtectedRoute
-              exact
-              path="/category-playlists/:id"
-              component={CategoryItem}
-            />
-            <ProtectedRoute
-              exact
-              path="/album-details/:id"
-              component={NewReleasesItem}
-            />
-            <Route path="/not-found" component={PageNotFound} />
-            <Redirect to="not-found" />
-          </Switch>
-        </BrowserRouter>
+        <Switch>
+          <Route exact path="/login" component={LoginRoute} />
+          <ProtectedRoute exact path="/" component={HomeRoute} />
+          <ProtectedRoute exact path="/playlist/:id" component={PlayListItem} />
+          <ProtectedRoute
+            exact
+            path="/category/:id/playlists"
+            component={CategoryItem}
+          />
+          <ProtectedRoute exact path="/album/:id" component={NewReleasesItem} />
+          <Route path="/not-found" component={PageNotFound} />
+          <Redirect to="not-found" />
+        </Switch>
       </SpotifyContext.Provider>
     )
   }

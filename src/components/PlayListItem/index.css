@@ -15,7 +15,7 @@
   background: #181818;
 }
 .playlist-item-failure-container {
-  width: 100vw;
+  width: 95vw;
   height: 100vh;
   border-radius: 8px;
   background: #040306;
@@ -24,15 +24,23 @@
   justify-content: center;
   align-items: center;
   margin-left: 30px;
+  margin-bottom: 30px;
 }
-.playlist-item-page-small {
-  display: none;
+.sidebar {
+  display: block;
 }
+.playlist-item-failure-page {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #181818;
+  color: white;
+}
+
 @media (max-width: 560px) {
-  .p-playlist-item-page {
-    display: none;
-  }
-  .playlist-item-page-small {
+  .playlist-item-page {
     display: flex;
     flex-direction: column;
     width: 360px;
@@ -42,12 +50,15 @@
     color: white;
   }
 
-  .playlist-item-container-small {
+  .playlist-item-container {
     width: 360px;
     height: 100vh;
   }
   .playlist-item-failure-container {
     width: 300px;
-    height: 900px;
+    height: 100vh;
+  }
+  .sidebar {
+    display: none;
   }
 }

@@ -9,7 +9,7 @@ class NewReleases extends Component {
     const {name, id, images} = newReleases
     const {url} = images
     return (
-      <Link to={`/album-details/${id}`} className="link-style">
+      <Link to={`/album/${id}`} className="link-style">
         <li className="n-list-item-container">
           <img src={url} alt="new release album" className="n-list-image" />
           <p className="n-list-item-name">{name}</p>

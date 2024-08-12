@@ -7,7 +7,7 @@ import './index.css'
 class TrackItemDetails extends Component {
   render() {
     const {trackItem, serialNo, isSelected} = this.props
-    console.log(isSelected)
+
     const {addedAt, track} = trackItem
     const {artists, durationMs, name, previewUrl, album, id} = track
     const {albumType} = album

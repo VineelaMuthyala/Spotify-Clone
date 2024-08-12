@@ -101,25 +101,11 @@ class PlayListItem extends Component {
     return (
       <>
         <div className="p-playlist-item-page">
-          <SideBar />
-          <div className="playlist-item-container">
-            <Header />
-            <PlayListItemDetails
-              tracksList={tracksList}
-              coverDetails={coverDetails}
-            />
-            <Footer
-              trackOneName={trackOneName}
-              trackOneArtist={trackOneArtist}
-              trackOneUrl={trackOneUrl}
-              coverDetails={coverDetails}
-              tracksList={tracksList}
-            />
+          <div className="sidebar">
+            <SideBar />
           </div>
-        </div>
 
-        <div className="playlist-item-page-small">
-          <div className="playlist-item-container-small">
+          <div className="playlist-item-container">
             <Header />
             <PlayListItemDetails
               tracksList={tracksList}
@@ -139,13 +125,10 @@ class PlayListItem extends Component {
   }
 
   renderPlayListItemFailure = () => (
-    <div className="playlist-item-page">
-      <SideBar />
-      <div className="playlist-item-container">
-        <Header />
-        <div className="playlist-item-failure-container">
-          <FailurePage />
-        </div>
+    <div className="playlist-item-failure-page">
+      <Header />
+      <div className="playlist-item-failure-container">
+        <FailurePage />
       </div>
     </div>
   )

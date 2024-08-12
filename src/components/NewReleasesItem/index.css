@@ -1,21 +1,17 @@
-.playlist-item-page {
-  display: flex;
-  flex-direction: row;
-  width: 1342px;
-  height: 1024px;
-  background: #181818;
-  color: white;
-}
-.playlist-item-container {
+.new-item-failure-page {
   display: flex;
   flex-direction: column;
-  width: 1342px;
-  height: 1024px;
+  width: 100vw;
+  height: 100vh;
   background: #181818;
+  color: white;
+  background: #181818;
+  overflow: hidden;
 }
-.playlist-item-failure-container {
-  width: 1278px;
-  height: 912px;
+
+.new-item-failure-container {
+  width: 95vw;
+  height: 100vh;
   border-radius: 8px;
   background: #040306;
   display: flex;
@@ -23,21 +19,13 @@
   justify-content: center;
   align-items: center;
   margin-left: 30px;
+  margin-bottom: 30px;
 }
 @media (max-width: 560px) {
-  .playlist-item-page {
-    display: flex;
-    flex-direction: column;
+  .new-item-failure-page {
     width: 360px;
-    height: auto;
   }
-
-  .playlist-item-container {
-    width: 360px;
-    height: auto;
-  }
-  .playlist-item-failure-container {
-    width: 300px;
-    height: 900px;
+  .new-item-failure-container {
+    width: 290px;
   }
 }

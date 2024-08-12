@@ -19,11 +19,14 @@ class Footer extends Component {
       isPlaying: false,
       volume: 1, // Volume range: 0 to 1
       currentTime: 0, // Track current playback time
+      duration: 0,
+      showPopup: true,
     }
   }
 
   componentDidMount() {
     const audio = this.audioElement.current
+    console.log('Didmount', audio)
     if (audio) {
       audio.addEventListener('loadedmetadata', this.handleMetadataLoad)
       audio.addEventListener('timeupdate', this.handleTimeUpdate)
@@ -32,6 +35,7 @@ class Footer extends Component {
 
   componentWillUnmount() {
     const audio = this.audioElement.current
+    console.log('unmount', audio)
     if (audio) {
       audio.removeEventListener('loadedmetadata', this.handleMetadataLoad)
       audio.removeEventListener('timeupdate', this.handleTimeUpdate)
@@ -52,8 +56,14 @@ class Footer extends Component {
     }
   }
 
+  renderPopup = () => (
+    <div className="popup-content">
+      <p>Sorry, this track does not have a preview URL available.</p>
+    </div>
+  )
+
   render() {
-    const {isPlaying, volume, duration, currentTime} = this.state
+    const {isPlaying, volume, duration, currentTime, showPopup} = this.state
 
     return (
       <SpotifyContext.Consumer>
@@ -83,7 +93,7 @@ class Footer extends Component {
 
           const handleVolumeChange = e => {
             const volumeChanged = e.target.value
-            console.log(volumeChanged)
+
             const audio = this.audioElement.current
             if (audio) {
               audio.volume = volumeChanged
@@ -104,33 +114,12 @@ class Footer extends Component {
               audio.currentTime = (time / 100) * audio.duration
             }
           }
-
+          console.log(previewUrl)
           return (
             <div className="footer-page">
               <div className="footer-item-container">
-                {footerDetails.previewUrl === undefined ? (
-                  <>
-                    <div className="footer">
-                      <img
-                        src={images}
-                        alt="footer 1"
-                        className="footer-image"
-                      />
-                      <div className="footer-item-text-container">
-                        <p className="footer-item-heading">{trackOneName}</p>
-                        <p className="footer-item-text">{trackOneArtist}</p>
-                      </div>
-                    </div>
-                    <audio
-                      ref={this.audioElement}
-                      src={trackOneUrl}
-                      type="audio/mp3"
-                      className="audio-style"
-                    >
-                      <source src={trackOneUrl} type="audio/mp3" />
-                      <track kind="captions" label="English captions" />
-                    </audio>
-                  </>
+                {previewUrl === null ? (
+                  <>{this.renderPopup()}</>
                 ) : (
                   <>
                     <div className="footer">

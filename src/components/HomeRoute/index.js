@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
-
+import {Link} from 'react-router-dom'
 import SideBar from '../SideBar'
 import PlayList from '../PlayList'
 import Categories from '../Categories'
@@ -44,6 +44,7 @@ class HomeRoute extends Component {
       total: data.tracks.total,
     },
     type: data.type,
+    description: data.description,
   })
 
   getUpdatedCategoriesList = data => ({
@@ -118,7 +119,6 @@ class HomeRoute extends Component {
 
   renderPlayList = () => {
     const {featuredPlayList} = this.state
-
     return (
       <ul className="lists-container">
         {featuredPlayList.map(eachItem => (

@@ -19,19 +19,14 @@ class PlayListItemDetails extends Component {
               <div className="track-cover-container">
                 <img src={images} alt="cover" className="track-cover-image" />
                 <div className="track-cover-text-container">
-                  <p className="track-cover-text">Players List</p>
-                  <h1 className="track-cover-heading">{name}</h1>
-                </div>
-              </div>
-              <div className="track-cover-container-small">
-                <img src={images} alt="cover" className="track-cover-image" />
-                <div className="track-cover-text-container">
+                  <p className="track-cover-text-title">Players List</p>
                   <h1 className="track-cover-heading">{name}</h1>
                   <p className="track-cover-text">
                     {tracksList[0].track.artists}
                   </p>
                 </div>
               </div>
+
               <div className="track-table-titles-container">
                 <p className="table-tracks">Tracks</p>
                 <p className="table-album">Album</p>
